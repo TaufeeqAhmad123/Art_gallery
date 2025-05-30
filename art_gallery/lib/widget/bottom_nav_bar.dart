@@ -12,7 +12,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  List <Widget> pages = [
+  List<Widget> pages = [
     HomeView(),
     const Center(child: Text('Chart Page')),
     const Center(child: Text('Category Page')),
@@ -27,11 +27,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: Container(
         height: 80,
         decoration: BoxDecoration(
-     
-         // color: Colors.black54,
+          // color: Colors.black54,
         ),
-    // padding: const EdgeInsets.all(10),
-      //margin: const EdgeInsets.all(10),
+        // padding: const EdgeInsets.all(10),
+        //margin: const EdgeInsets.all(10),
         child: NavigationView(
           onChangePage: (index) {
             setState(() {
@@ -46,33 +45,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
           ),
-         
+
           color: Colors.orange.withOpacity(.4),
           items: [
+            // Home
             ItemNavigationView(
               childAfter: Icon(
-                IconlyBold.profile,
+                IconlyBold.home,
                 color: Colors.orange.withOpacity(.5),
                 size: 35,
               ),
               childBefore: Icon(
-                IconlyBold.profile,
+                IconlyBold.home,
                 color: theme.dialogBackgroundColor,
                 size: 30,
               ),
             ),
-            ItemNavigationView(
-              childAfter: Icon(
-                IconlyBold.chart,
-                color: Colors.orange.withOpacity(.5),
-                size: 35,
-              ),
-              childBefore: Icon(
-                IconlyBold.chart,
-                color: theme.dialogBackgroundColor,
-                size: 30,
-              ),
-            ),
+
+            // Explore
             ItemNavigationView(
               childAfter: Icon(
                 IconlyBold.category,
@@ -85,14 +75,30 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 size: 30,
               ),
             ),
+
+            // Chart
             ItemNavigationView(
               childAfter: Icon(
-                IconlyBold.home,
+                IconlyBold.chart,
                 color: Colors.orange.withOpacity(.5),
                 size: 35,
               ),
               childBefore: Icon(
-                IconlyBold.home,
+                IconlyBold.chart,
+                color: theme.dialogBackgroundColor,
+                size: 30,
+              ),
+            ),
+
+            // Profile
+            ItemNavigationView(
+              childAfter: Icon(
+                IconlyBold.profile,
+                color: Colors.orange.withOpacity(.5),
+                size: 35,
+              ),
+              childBefore: Icon(
+                IconlyBold.profile,
                 color: theme.dialogBackgroundColor,
                 size: 30,
               ),
